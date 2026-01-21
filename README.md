@@ -9,3 +9,4 @@ objetivos:
 -subir nivel git 
 
 linea rama A 
+a ver si aparece conflicto 
