@@ -1,5 +1,7 @@
 # practica-git
 
+repo personal para practicar git y github
+
 objetivos: 
 -aprender commits
 -aprender ramas
