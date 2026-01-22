@@ -5,3 +5,4 @@ Technologies used:
 - Angular
 - Tailwind CSS
 - TypeScript
+- JavaScript
