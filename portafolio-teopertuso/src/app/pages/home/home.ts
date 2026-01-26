@@ -16,7 +16,7 @@ export class Home {
       icon: 'linkedin',
     },
     { name: 'GitHub', url: 'https://github.com/mateopertuso', icon: 'github' },
-    { name: 'Instagram', url: '#', icon: 'instagram' },
+    { name: 'TikTok', url: '#', icon: 'tiktok' },
     { name: 'YouTube', url: '#', icon: 'youtube' },
     { name: 'Twitter', url: '#', icon: 'twitter' },
   ];
