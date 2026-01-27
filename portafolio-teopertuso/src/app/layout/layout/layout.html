@@ -1,28 +1,67 @@
 <div class="flex flex-col min-h-screen bg-black text-white">
   <header class="sticky top-0 z-[100] border-b border-white/10 bg-black/60 backdrop-blur">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-      <a routerLink="/" class="text-lg font-semibold tracking-tight text-white">
+    <nav class="mx-auto max-w-6xl px-4 py-4 flex items-center">
+      <!-- Logo -->
+      <a routerLink="/" class="text-lg font-semibold tracking-tight text-white shrink-0">
         Teo<span class="text-blue-500">.</span>
       </a>
 
+      <!-- Center nav (desktop) -->
+      <div class="hidden md:flex flex-1 justify-center">
+        <div
+          class="flex items-center gap-6 rounded-full border border-white/10 bg-white/5 px-6 py-2 backdrop-blur-md"
+        >
+          <a
+            routerLink="/"
+            routerLinkActive="text-white bg-blue-500/10"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="px-4 py-1.5 rounded-full text-sm text-white/70 transition hover:text-white hover:bg-white/10"
+          >
+            Home
+          </a>
+
+          <a
+            routerLink="/about"
+            routerLinkActive="text-white bg-blue-500/10"
+            class="px-4 py-1.5 rounded-full text-sm text-white/70 transition hover:text-white hover:bg-white/10"
+          >
+            About
+          </a>
+
+          <a
+            routerLink="/projects"
+            routerLinkActive="text-white bg-blue-500/10"
+            class="px-4 py-1.5 rounded-full text-sm text-white/70 transition hover:text-white hover:bg-white/10"
+          >
+            Projects
+          </a>
+
+          <a
+            routerLink="/contact"
+            routerLinkActive="text-white bg-blue-500/10"
+            class="px-4 py-1.5 rounded-full text-sm text-white/70 transition hover:text-white hover:bg-white/10"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+
       <!-- Mobile menu button -->
       <button
-        class="relative z-[110] md:hidden h-8 w-8 flex items-center justify-center text-white"
+        class="relative z-[110] md:hidden ml-auto h-8 w-8 flex items-center justify-center text-white"
         (click)="toggleMenu()"
         aria-label="Toggle menu"
       >
-        <!-- Hamburger -->
         <span
-          class="absolute text-xl transition-all duration-600"
+          class="absolute text-xl transition-all duration-300"
           [class.opacity-0]="isMenuOpen"
           [class.rotate-45]="isMenuOpen"
         >
           ☰
         </span>
 
-        <!-- Close -->
         <span
-          class="absolute text-xl transition-all duration-600"
+          class="absolute text-xl transition-all duration-300"
           [class.opacity-100]="isMenuOpen"
           [class.opacity-0]="!isMenuOpen"
           [class.rotate-90]="!isMenuOpen"
@@ -30,41 +69,6 @@
           ✕
         </span>
       </button>
-
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a
-          routerLink="/"
-          routerLinkActive="text-white after:scale-x-100"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
-        >
-          Home
-        </a>
-
-        <a
-          routerLink="/about"
-          routerLinkActive="text-white after:scale-x-100"
-          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
-        >
-          About
-        </a>
-
-        <a
-          routerLink="/projects"
-          routerLinkActive="text-white after:scale-x-100"
-          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
-        >
-          Projects
-        </a>
-
-        <a
-          routerLink="/contact"
-          routerLinkActive="text-white after:scale-x-100"
-          class="relative text-white/70 hover:text-white transition after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:scale-x-0 after:bg-blue-500 after:transition-transform"
-        >
-          Contact
-        </a>
-      </div>
     </nav>
   </header>
   <!-- Mobile menu overlay -->

@@ -18,7 +18,7 @@ export class Home {
     { name: 'GitHub', url: 'https://github.com/mateopertuso', icon: 'github' },
     { name: 'TikTok', url: '#', icon: 'tiktok' },
     { name: 'YouTube', url: '#', icon: 'youtube' },
-    { name: 'Twitter', url: '#', icon: 'twitter' },
+    { name: 'X', url: 'https://x.com/teo_pertuso', icon: 'x' },
   ];
 
   technologies = [
