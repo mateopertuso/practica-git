@@ -17,7 +17,7 @@ module.exports = {
       },
       animation: {
         slideDown: 'slideDown 0.5s ease-out',
-        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+        fadeInUp: 'fadeInUp 0.6s ease-out forwards',
       },
     },
   },
