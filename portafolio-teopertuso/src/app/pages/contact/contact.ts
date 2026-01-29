@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from 'emailjs-com';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -27,15 +28,15 @@ export class Contact {
     this.error = false;
     emailjs
       .send(
-        'service_zie3fbt',
-        'template_lcatdui',
+        environment.emailJsServiceId,
+        environment.emailJsTemplateId,
         {
           from_name: this.form.name,
           from_email: this.form.email,
           subject: this.form.subject,
           message: this.form.message,
         },
-        'ou1MCTn0J4JtBwg-G',
+        environment.emailJsPublicKey,
       )
       .then(() => {
         this.form = { name: '', email: '', subject: '', message: '' };
