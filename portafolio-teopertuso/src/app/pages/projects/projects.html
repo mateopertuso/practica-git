@@ -55,7 +55,8 @@
   <!-- MODAL -->
   <ng-container *ngIf="selectedProject">
     <div
-      class="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 animate-slideDown"
+      class="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+      [ngClass]="isClosing ? 'animate-fadeOutDown' : 'animate-slideDown'"
       (click)="closeProject()"
     >
       <div
@@ -79,7 +80,7 @@
         </p>
 
         <!-- Carousel -->
-        <div class="relative mb-6">
+        <div class="relative mb-6 group">
           <!-- Image -->
           <div class="relative overflow-hidden">
             <img
@@ -88,17 +89,33 @@
               alt="Project screenshot"
             />
           </div>
+          <!-- Indicators -->
+          <div class="mt-4 flex justify-center gap-2">
+            <button
+              *ngFor="let _ of selectedProject.images; let i = index"
+              (click)="currentImage = i"
+              class="h-2.5 w-2.5 rounded-full transition-all"
+              [ngClass]="
+                i === currentImage ? 'bg-blue-600 scale-110' : 'bg-white/30 hover:bg-white/60'
+              "
+              aria-label="Go to image {{ i + 1 }}"
+            ></button>
+          </div>
 
+          <!-- Prev -->
           <button
-            class="absolute left-0 top-1/2 -translate-y-1/2 h-14 w-14 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white text-2xl transition"
+            class="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-full bg-black/40 backdrop-blur text-white text-xl opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:bg-black/70 md:opacity-0"
             (click)="prevImage()"
+            aria-label="Previous image"
           >
             ‹
           </button>
 
+          <!-- Next -->
           <button
-            class="absolute right-0 top-1/2 -translate-y-1/2 h-14 w-14 flex items-center justify-center bg-black/40 hover:bg-black/70 text-white text-2xl transition"
+            class="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 flex items-center justify-center rounded-full bg-black/40 backdrop-blur text-white text-xl opacity-0 group-hover:opacity-100 transition-all hover:scale-110 hover:bg-black/70 md:opacity-0"
             (click)="nextImage()"
+            aria-label="Next image"
           >
             ›
           </button>

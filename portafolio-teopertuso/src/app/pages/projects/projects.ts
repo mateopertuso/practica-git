@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class Projects {
   selectedProject: Project | null = null;
   currentImage = 0;
+  isClosing = false;
 
   projects: Project[] = [
     {
@@ -46,7 +47,11 @@ export class Projects {
   }
 
   closeProject() {
-    this.selectedProject = null;
+    this.isClosing = true;
+    setTimeout(() => {
+      this.selectedProject = null;
+      this.isClosing = false;
+    }, 300);
   }
 
   nextImage() {
