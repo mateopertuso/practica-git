@@ -5,8 +5,3 @@ Technologies used:
 - Angular
 - Tailwind CSS
 - TypeScript
-
-Others:
-
--EmailJs
--Git
