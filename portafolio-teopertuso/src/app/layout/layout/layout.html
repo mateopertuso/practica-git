@@ -1,12 +1,10 @@
 <div class="flex flex-col h-screen bg-black text-white">
   <header class="sticky top-0 z-[100] border-b border-white/10 bg-gray-900 backdrop-blur">
-    <nav class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <!-- Logo -->
+    <nav class="mx-auto max-w-6xl px-3 py-3 flex items-center justify-between">
       <a routerLink="/">
-        <img src="assets/images/icono5.png" alt="logo" class="w-14 h-12" />
+        <img src="assets/images/perfil.png" alt="logo" class="w-14 h-14 rounded-full" />
       </a>
 
-      <!-- Center nav (desktop) -->
       <div class="hidden md:flex flex-1 justify-end">
         <div
           class="flex items-center gap-6 rounded-full border border-white/10 bg-white/5 px-6 py-2 backdrop-blur-md"
@@ -46,7 +44,6 @@
         </div>
       </div>
 
-      <!-- Mobile menu button -->
       <button
         class="relative z-[110] md:hidden ml-auto h-8 w-8 flex items-center justify-center text-white"
         (click)="toggleMenu()"
@@ -71,7 +68,6 @@
       </button>
     </nav>
   </header>
-  <!-- Mobile menu overlay -->
   <div
     *ngIf="isMenuOpen"
     class="fixed inset-0 z-[90] bg-black/80 backdrop-blur-sm md:hidden"
